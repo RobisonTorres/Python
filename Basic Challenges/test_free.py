@@ -1,3 +1,3 @@
-print('Test Free - keep it clean')
+print('Test Free - keep it clean.')
 print()
 
