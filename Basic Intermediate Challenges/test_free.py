@@ -4,12 +4,12 @@ print()
 def queue_time(customers, n):
 
     total_minutes = 0
-    minutes = customers   
-    while minutes:
-        sub = min(total_minutes[0: n])
-        x += sub
-        minutes = [num - sub for num in minutes[0:n]]
-        minutes = [num for num in minutes if num != 0]
-    return minutes
+    while customers:
+        sub = min(customers[0: n])
+        total_minutes += sub
+        minutes = [num - sub for num in customers[0:n]]
+        customers[0: n] = minutes
+        customers = [num for num in customers if num != 0]
+    return total_minutes
 
-print(queue_time([4,8,5,2], 2))
+print(queue_time([4, 8, 5, 2, 4], 1))
