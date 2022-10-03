@@ -13,5 +13,6 @@ def wave(people):
             arr.append(people[0:x] + people[x].upper() + people[x+1:])
             x += 1
     return arr
+    # return [str[:i] + str[i].upper() + str[i+1:] for i in range(len(str)) if str[i].isalpha()]
 
 print(wave(" gap "))  # Outputs - [' Gap ', ' gAp ', ' gaP ']
