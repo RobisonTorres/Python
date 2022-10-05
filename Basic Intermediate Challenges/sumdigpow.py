@@ -16,5 +16,6 @@ def sum_dig_pow(a, b):
         if x == n:
             numbers.append(x)
     return numbers
+    #  return [x for x in range(a, b+1) if sum([int(d)**i for i, d in enumerate(str(x), 1)]) == x]
 
 print(sum_dig_pow(1, 1000))  # Outputs - [1, 2, 3, 4, 5, 6, 7, 8, 9, 89, 135, 175, 518, 598]
