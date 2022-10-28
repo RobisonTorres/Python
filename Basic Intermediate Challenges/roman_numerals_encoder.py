@@ -4,7 +4,7 @@ print()
 
 def solution(n):
 
-    # This function takes a positive integer as its parameter and returns
+    # This function takes a positive integer (1 - 9999) as its parameter and returns
     # a string containing the Roman Numeral representation of that integer.
     nums = []
     num = str(n)
