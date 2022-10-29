@@ -1,7 +1,6 @@
 print('From Code Wars.')
 print()
 
-
 def solution(n):
 
     # This function takes a positive integer (1 - 9999) as its parameter and returns
@@ -24,4 +23,4 @@ def solution(n):
     
     return ''.join([dict_M[r] for r in numbers])
 
-print(solution(1990))
+print(solution(1990))  # Outputs - MCMXC
