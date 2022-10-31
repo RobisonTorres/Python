@@ -11,8 +11,7 @@ def solution(roman):
     }
 
     numbers = [roman_numbers[n] for n in [l for l in roman]]
-    new_number = [x[0] * (-1) if x[0] < x [1] else x[0] 
-                    for x in zip(numbers, numbers[1:] + [0])]
-    return sum(new_number)
+    return sum([x[0] * (-1) if x[0] < x [1] else x[0] 
+                for x in zip(numbers, numbers[1:] + [0])])
 
 print(solution('MCMXC'))  # Outputs - 1990
