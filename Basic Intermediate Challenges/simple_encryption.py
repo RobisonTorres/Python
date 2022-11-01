@@ -18,6 +18,7 @@ def encrypt(text, n):
     for x in range(n):
         text = ''.join([l if n % 2 != 0 else '' for n, l in enumerate(text)] + 
                         [l if n % 2 == 0 else '' for n, l in enumerate(text)])
+        # text = text[1::2] + text[::2] - Clever    
     return text
 
 print(decrypt("This is a test!", 2))  # Outputs - s eT ashi tist!
