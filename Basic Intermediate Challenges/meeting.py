@@ -8,4 +8,5 @@ def meeting(s):
     list_names = sorted([f'({", ".join(name.split(":")[::-1]).upper()})' for name in s.split(';')])
     return ''.join(list_names)
 
-print(meeting("Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill"))
+print(meeting("Fred:Corwill;Barney:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill"))
+# Outputs - (CORWILL, ALFRED)(CORWILL, FRED)(CORWILL, RAPHAEL)(TORNBULL, BARNEY)(TORNBULL, BJON)
