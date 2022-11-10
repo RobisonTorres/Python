@@ -1,10 +1,11 @@
 print('From Code Wars.')
 print()
 
-def solution(n):
+def solution():
 
     # This function takes a positive integer (1 - 9999) as its parameter and returns
     # a string containing the Roman Numeral representation of that integer.
+    n = input('Please, type in the number you want to convert to roman numeral: ')
     nums = []
     num = str(n)
     while num:
@@ -21,6 +22,6 @@ def solution(n):
               1: 'I', 2: 'II', 3: 'III', 4: 'IV', 5: 'V', 6: 'VI',
               7: 'VII', 8: 'VIII', 9: 'IX'}
     
-    return ''.join([dict_M[r] for r in numbers])
+    return 'The result is '+''.join([dict_M[r] for r in numbers]) +'.'
 
-print(solution(1990))  # Outputs - MCMXC
+print(solution())  # Input - 1990 - Outputs - MCMXC
