@@ -11,7 +11,8 @@ def stock_list(list_of_art, list_of_cat):
         new.append(
             f'({code[x][0]} : {sum([code[x][1] + int(l[1]) for l in product if code[x][0].startswith(l[0][0])])})')
     return '' if [] in (list_of_art, list_of_cat) else ' - '.join(new)
-
+    # return ' - '.join(["({} : {})".format(cat,sum([int(s.split()[1])
+    # for s in a if s.split()[0][0]==cat])) for cat in c]) if a else '' - Clever.
 
 print(stock_list(["ABART 20", "CDXEF 50", "BTSQZ 89", "DRTYM 60"], ["A", "B", "C", "W"]))
 # Outputs - (A : 20) - (B : 89) - (C : 50) - (W : 0)
