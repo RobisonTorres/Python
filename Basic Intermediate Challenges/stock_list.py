@@ -3,7 +3,7 @@ print()
 
 def stock_list(list_of_art, list_of_cat):
     
-    # This function sums the quantity of items based in their code.
+    # This function sums the quantity of items based on their code (First letter).
     code = list(zip(list_of_cat, len(list_of_cat) * [0]))
     product = [code.split() for code in list_of_art]
     new = []
@@ -14,5 +14,5 @@ def stock_list(list_of_art, list_of_cat):
     # return ' - '.join(["({} : {})".format(cat,sum([int(s.split()[1])
     # for s in a if s.split()[0][0]==cat])) for cat in c]) if a else '' - Clever.
 
-print(stock_list(["ABART 20", "CDXEF 50", "BTSQZ 89", "DRTYM 60"], ["A", "B", "C", "W"]))
-# Outputs - (A : 20) - (B : 89) - (C : 50) - (W : 0)
+print(stock_list(["ABART 20", "CDXEF 50", "BTSQZ 89", "DRTYM 60", "CXECD 40"], ["A", "B", "C", "D"]))
+# Outputs - (A : 20) - (B : 89) - (C : 90) - (D : 60)
