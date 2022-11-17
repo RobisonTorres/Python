@@ -10,4 +10,4 @@ def race(v1, v2, g):
     t_time.append((t_time[1] - int(t_time[1])) * 60)
     return None if v1 >= v2 else list(map(int, t_time))
 
-print(race(80, 91, 37))  # Outputs - 3h21min49s - To A catch B.
+print(race(80, 91, 37))  # Outputs - 3h21min49s to A catch B.
