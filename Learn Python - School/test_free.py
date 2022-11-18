@@ -1,3 +1,3 @@
-print('Working with tests')
+print('Test Free - keep it clear')
 print()
 
