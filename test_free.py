@@ -5,7 +5,7 @@ print()
 # crt + D / alt + mouse / alt + up or down / shift + alt + up or down / crt + l
 # crt + N .. crt + k, m .. crt + s
 
-def getOrder(input):
+def get_order(input):
 
     menu = ['Burger', 'Fries', 'Chicken', 'Pizza', 
             'Sandwich', 'Onionrings', 'Milkshake', 'Coke']
