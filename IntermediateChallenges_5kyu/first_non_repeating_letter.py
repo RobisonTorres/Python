@@ -15,4 +15,4 @@ def first_non_repeating_letter(string):
         except:
             return string[string.index(copy_count[0].upper())]
 
-print(first_non_repeating_letter('Toshiba'))
+print(first_non_repeating_letter('Toshiba'))  # Outputs - T
