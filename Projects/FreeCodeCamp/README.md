@@ -1,0 +1,1 @@
+This repository contains my personal solution to Free Code Camp's Scientific Computing with Python Projects.
