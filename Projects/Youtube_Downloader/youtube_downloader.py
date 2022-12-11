@@ -9,7 +9,6 @@ print()
 def download():
 
     # This function downloads youtube videos.
-
     option = int(input('Press 1 to download Video or Press 2 to download Playlist: '))
     downloads_path = str(Path.home() / "Downloads")
     print()
