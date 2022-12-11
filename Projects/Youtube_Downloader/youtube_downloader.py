@@ -36,7 +36,6 @@ def download():
                 youtube_video = youtube_video.streams.get_highest_resolution()
                 youtube_video.download(directory)
                 print('Video ' + str(num) + ' is Downloaded.')
-                print()
             return 'Download successfully.'
         except: return 'Sorry, something went wrong.'
     
