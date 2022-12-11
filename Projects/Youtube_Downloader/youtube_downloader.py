@@ -12,12 +12,12 @@ def download():
     option = int(input('Press 1 to download Video or Press 2 to download Playlist: '))
     downloads_path = str(Path.home() / "Downloads")
     print()
-    directory = (input("Download Location - \n\nType in the directory's path or hit enter to chose the default directory (Downloads):\n ")
-                or downloads_path)
+    directory = (input("Download Location - Type in the directory's path or hit enter to chose the default directory (Downloads):\n"r'')
+                         or downloads_path)
 
     if option == 1:
         print()
-        link = input("Type in the videos's url that you want to download:\n ")
+        link = input("Type in the videos's url that you want to download:\n")
         youtube_video = YouTube(link, on_progress_callback=on_progress)
         youtube_video = youtube_video.streams.get_highest_resolution()
         try:
@@ -27,7 +27,7 @@ def download():
 
     elif option == 2:
         print()
-        link = input("Type in the playlist's url that you want to download:\n ")
+        link = input("Type in the playlist's url that you want to download:\n")
         playlist = Playlist(link)
         playlist_videos = list(playlist.video_urls)
         try:
