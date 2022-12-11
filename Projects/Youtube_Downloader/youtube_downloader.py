@@ -31,10 +31,11 @@ def download():
         playlist = Playlist(link)
         playlist_videos = list(playlist.video_urls)
         try:
-            for video in playlist_videos:
-                youtube_video = YouTube(video, on_progress_callback=on_progress)
+            for num, video in enumerate(playlist_videos, 1):
+                youtube_video = YouTube(video)
                 youtube_video = youtube_video.streams.get_highest_resolution()
                 youtube_video.download(directory)
+                print('Video ' + str(num) + ' is Downloaded.')
             return 'Download successfully.'
         except: return 'Sorry, something went wrong.'
     
