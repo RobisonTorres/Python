@@ -12,7 +12,7 @@ def download():
     option = int(input('Press 1 to download Video or Press 2 to download Playlist: '))
     downloads_path = str(Path.home() / "Downloads")
     print()
-    directory = (input(r"Download Location - Type in the directory's path or hit enter to chose the default directory (Downloads): " + '\n')
+    directory = (input(r"Download Location - Type in the directory's path or hit enter to chose the default directory (Downloads):"+'\n')
                          or downloads_path)
 
     if option == 1:
