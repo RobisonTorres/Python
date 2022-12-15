@@ -7,4 +7,4 @@ def move_zeros(array):
     nums = [n for n in array if n != 0]
     return nums + array.count(0) * [0]
 
-print(move_zeros([1, 2, 0, 1, 0, 1, 0, 3, 0, 1]))
+print(move_zeros([1, 2, 0, 1, 0, 1, 0, 3, 0, 1]))  # Outputs - [1, 2, 1, 1, 3, 1, 0, 0, 0, 0]
