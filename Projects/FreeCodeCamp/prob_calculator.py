@@ -63,7 +63,3 @@ probability = experiment(
 print("Probability:", probability)
 
 # Outputs - Probability: 0.17066666666666666
-
-'''
-Project description: https://www.freecodecamp.org/learn/scientific-computing-with-python/scientific-computing-with-python-projects/probability-calculator
-'''

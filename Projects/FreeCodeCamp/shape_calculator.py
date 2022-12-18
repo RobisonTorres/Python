@@ -71,6 +71,4 @@ Rectangle(width=3, height=10)
 81
 5.656854249492381
 Square(side=4)
-
-Project description: https://www.freecodecamp.org/learn/scientific-computing-with-python/scientific-computing-with-python-projects/polygon-area-calculator
 '''

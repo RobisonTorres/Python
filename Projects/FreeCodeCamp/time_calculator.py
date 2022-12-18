@@ -79,7 +79,3 @@ def add_time(start, duration, weekday=''):
     return new_hour
 
 print(add_time("11:06 PM", "2:02"))  # Outputs - 1:08 AM (next day)
-
-'''
-Project description: https://www.freecodecamp.org/learn/scientific-computing-with-python/scientific-computing-with-python-projects/time-calculator
-'''
