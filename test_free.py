@@ -17,4 +17,3 @@ def max_sequence(arr):
         return 'ToDo'
         
 print(max_sequence([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
-print()
