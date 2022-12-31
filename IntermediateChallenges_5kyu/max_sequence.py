@@ -12,4 +12,5 @@ def max_sequence(arr):
         return max(max_sum)
     except: return 0
 
-print(max_sequence([-2, 1, -3, 4, -1, 2, 1, -5, 4]))  # Outputs - 6
+print(max_sequence([-2, 1, -3, 4, -1, 2, 1, -5, 4]))  
+# [4, -1, 2, 1] - Outputs - 6
