@@ -8,6 +8,7 @@ def increment_string(strng):
     # the string does not end with a number. the number 1 should be appended to the new string.
     if strng and strng[-1].isnumeric():
         nums = ''.join([l if l.isnumeric() else ' ' for l in strng]).split()
+        # num = s[len(s.rstrip("0123456789")):] - Clever.
         return strng[:-(len(nums[-1]))]  + str(int(nums[-1]) + 1).zfill(len(nums[-1]))
     return strng + '1'
 
