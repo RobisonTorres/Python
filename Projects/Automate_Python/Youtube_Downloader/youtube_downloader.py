@@ -20,7 +20,8 @@ def download():
         if option == 1:
             print()
             link = input("Type in the videos's url that you want to download:\n")
-            youtube_video = YouTube(link, on_progress_callback=on_progress)
+            youtube_video = YouTube(link, use_oauth=True, allow_oauth_cache=True, 
+                                    on_progress_callback=on_progress)
             youtube_video = youtube_video.streams.get_highest_resolution()
             try:
                 youtube_video.download(directory)
@@ -33,7 +34,7 @@ def download():
             playlist_videos = list(playlist.video_urls)
             try:
                 for num, video in enumerate(playlist_videos, 1):
-                    youtube_video = YouTube(video)
+                    youtube_video = YouTube(video,  use_oauth=True, allow_oauth_cache=True)
                     youtube_video = youtube_video.streams.get_highest_resolution()
                     youtube_video.download(directory)
                     print('Video ' + str(num) + ' is Downloaded.')
