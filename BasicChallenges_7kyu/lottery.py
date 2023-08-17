@@ -10,7 +10,7 @@ def score(lottery_numbers, your_games):
         result.append(str(num) + '° Game - Score: ' 
                                +  str(15 - len(set(lottery_numbers) - set(game))))
     return '\n'.join(result)
-    
+
 print(score('', 
             [[],
             [],
