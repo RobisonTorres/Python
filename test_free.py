@@ -6,8 +6,8 @@ print()
 # crt + D / alt + mouse / alt + up or down / shift + alt + up or down / crt + l
 # crt + N .. crt + k, m .. crt + s
 
-path = r"C:\Users\rcssi\Downloads\geckodriver"
-drive = webdriver.Firefox
+#path = r"C:\Users\rcssi\Downloads\geckodriver"
+#drive = webdriver.Firefox
 
-print('testing')
-
+driver = webdriver.Firefox()
+driver.get("https://www.youtube.com/")
