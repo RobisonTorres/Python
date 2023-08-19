@@ -12,7 +12,7 @@ def score(your_games):
     # Taking the lottery result from web scraping.
     query = f"lotofacil + \
             {input('What round do you want to check: ')} + noticias.uol.com.br"
-    
+    print()
     url = search(query, tld="co.in", num=1, stop=1, pause=2)
     source = requests.get(*url).text
     soup = BeautifulSoup(source, 'html.parser')
