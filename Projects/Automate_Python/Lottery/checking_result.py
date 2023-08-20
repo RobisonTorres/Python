@@ -9,7 +9,7 @@ def score(your_games):
     
     # This function checks the total score hit in each lottery ticket.
 
-    # Taking the lottery result from web scraping.
+    # Taking the lottery result through web scraping.
     query = f"lotofacil + \
             {input('What round do you want to check: ')} + noticias.uol.com.br"
 
