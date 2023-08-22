@@ -20,7 +20,7 @@ def score():
         soup = bs4.BeautifulSoup(source, 'html.parser')
 
         # Extracting the lottery result from the scraping.
-        lottery_result = re.findall(r'(?:(?:[0-9]{2}-?){15})', soup.text)[0]
+        lottery_result = re.findall(r'(?:(?:[0-9]{2}\s?-?\s?){15})', soup.text)[0].replace(' ', '')  
         print(f'Round: {num} - Result: {[lottery_result]}')
 
         # Storing the results.
@@ -29,14 +29,14 @@ def score():
     print()
 
     # Getting the frequency of each number.
-    frequency = []
-    results = ''.join(results).replace('-', '')  
+    frequency = {}
+    results = ''.join(results).replace('-', '') 
     lottery_result = [int(results[x: x+2]) for x in range(0, len(results), 2)]
 
     for num in range(1, 26):
-        frequency.append(f'num {num}: {lottery_result.count(num)}')
+        frequency[num] = lottery_result.count(num)
 
     print('Frequency')    
-    return frequency
+    return sorted(frequency.items(),key=lambda x:x[1])[::-1]
 
 print(score())
