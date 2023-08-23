@@ -11,7 +11,6 @@ def score():
 
     # This function retrieves twenty previous results from the 'lotofacil' lottery, 
     # either from a local JSON file or through web scraping.
-    # It also stores the results in a JSON file for future use.
     
     file = open('pre_results.json')
     round = int(input('Type in the last lottery round: '))
@@ -43,6 +42,6 @@ def score():
     with open('pre_results.json', 'w') as file:
         json.dump(results, file)
             
-    return '\nPrevious Results Saved.'
+    return '\nResults Saved.'
 
 print(score())
