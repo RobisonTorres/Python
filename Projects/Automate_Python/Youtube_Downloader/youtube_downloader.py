@@ -45,6 +45,6 @@ def download():
         print()
         start = input("Type in 'Yes' if you want to continue or anything else to stop:\n" ).capitalize()
         subprocess.run('cls', shell=True)
-    return 'Downloaded successfully.'
+    return 'Download successfully.'
 
 print(download())

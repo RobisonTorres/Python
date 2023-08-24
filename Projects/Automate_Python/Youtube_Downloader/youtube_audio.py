@@ -16,6 +16,6 @@ def download():
         new_file = base + '.mp3'
         os.rename(out_file, new_file)
     except: return 'Sorry, something went wrong.'
-    return 'Downloaded successfully.'
+    return 'Download successfully.'
 
 print(download())
