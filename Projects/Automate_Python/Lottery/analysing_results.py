@@ -5,7 +5,7 @@ print()
 
 def analyse_results():
     
-    # This function analyses previous results from lottery.
+    # This function...
     file = open('pre_results.json')   
     results = json.load(file).values()
     results = ''.join(results).replace('-', '') 
@@ -34,25 +34,24 @@ results {even_nums}% of them are even, and {odd_nums}% are odd.\n')
     print('Frequency of each number.')    
     print(frequency)
 
-    # Numbers to consider based on previous results.
     frequency = sorted(frequency.items(),key=lambda x:x[1])[::-1]
     numbers = list(dict(frequency).keys())
     print('\nNumbers most drew in these rounds.')
     print(sorted(numbers[0:15]))
     
     random_games = []
-    for x in range(0, 100):
+    for x in range(0, 10000):
         random_games.append(random.sample(range(1, 26), 15))
     
-    # Compare the each random game with the actual results and calculate scores.
+    # Comparing each random game with one previous result.
     score = []
+    random_result = random.choice(grouped_results)
 
-    for z in range(0, len(random_games)):
-        for n in range(0, len(grouped_results)):
-            score.append(15 - len(set(grouped_results[n]) - set(random_games[z])))
+    for num in range(0, len(random_games)):
+            score.append(15 - len(set(random_result) - set(random_games[num])))
 
-    return (f"\nAfter simulating {len(random_games)} random games in {len(grouped_results)} \
-previous results, which is {len(score)} scores, the analysis shows that the lowest score \
+    return (f"\nAfter simulating {len(random_games)} random games in one \
+previous results, the analysis shows that the lowest score \
 achieved was {min(score)}, while the highest score reached was {max(score)}.\n")
         
 print(analyse_results())
