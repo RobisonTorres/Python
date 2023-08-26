@@ -46,7 +46,7 @@ results {even_nums}% of them are even, and {odd_nums}% are odd.\n')
 
     # Simulate random games and calculate scores.
     random_games = []
-    for x in range(0, 10000):
+    for x in range(0, 1_000_000):  # one million.
         random_games.append(random.sample(range(1, 26), 15))
   
     score = []
@@ -59,7 +59,7 @@ results {even_nums}% of them are even, and {odd_nums}% are odd.\n')
     for num in range(11, 16):
         score_prizes[str(num) + ' pts'] = score.count(num)
 
-    return (f"\nAfter simulating {len(random_games)} random games based in one previous results, "
+    return (f"\nAfter simulating a million random games based in one previous results, "
         f"the analysis indicates the frequency of each score required to win prizes is:\n"
         f"{score_prizes}.\n")
       
