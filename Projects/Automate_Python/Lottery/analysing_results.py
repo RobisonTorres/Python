@@ -1,11 +1,11 @@
 import json
 import random
-print('Analyse Previous Results.')
+print('Analyzing Previous Results.')
 print()
 
 def analyse_results():
     
-    # This function analyses previous results of lottery, gives frequency 
+    # This function analyses previous results from lottery, gives frequency 
     # of each number, and shows the probability of winning prizes.
 
     # Opening the file.
@@ -44,7 +44,7 @@ results {even_nums}% of them are even, and {odd_nums}% are odd.\n')
     print('\nNumbers most drew in these rounds.')
     print(sorted(numbers[0:10]))
 
-    # Simulate random games and calculate scores
+    # Simulate random games and calculate scores.
     random_games = []
     for x in range(0, 10000):
         random_games.append(random.sample(range(1, 26), 15))
