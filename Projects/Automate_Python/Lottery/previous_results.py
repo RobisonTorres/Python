@@ -16,6 +16,7 @@ def score():
     round = int(input('Type in the last lottery round: '))
     print()
     results = json.load(file)
+    results = dict(sorted(results.items(),key=lambda x:x[0])[::-1])
     
     for num in range((round - 19), round + 1):
         if str(num) in results.keys():
@@ -37,9 +38,9 @@ def score():
             # Store the result in the 'results' dictionary.
             results[num] = lottery_result
     
-            # Save the updated results.
-            with open('pre_results.json', 'w') as file:
-                json.dump(results, file, indent = 1)
+    # Save the updated results.
+    with open('pre_results.json', 'w') as file:
+        json.dump(results, file, indent = 1)
             
     return '\nNews results have been saved.'
 
