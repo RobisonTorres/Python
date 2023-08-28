@@ -37,10 +37,10 @@ def score():
             # Store the result in the 'results' dictionary.
             results[num] = lottery_result
     
-    # Save the updated results.
-    with open('pre_results.json', 'w') as file:
-        json.dump(results, file)
+            # Save the updated results.
+            with open('pre_results.json', 'w') as file:
+                json.dump(results, file, indent = 1)
             
-    return '\nResults have been saved.'
+    return '\nNews results have been saved.'
 
 print(score())
