@@ -11,14 +11,15 @@ def score():
 
     # This function retrieves twenty previous results from the 'lotofacil' lottery, 
     # through web scraping or local file, and saves the new result for future use.
-    
+
+    # Open file.
     file = open('pre_results.json')
     round = int(input('Type in the last lottery round: '))
     print()
     results = json.load(file)
     results = dict(sorted(results.items(),key=lambda x:x[0])[::-1])
     
-    for num in range((round - 19), round + 1):
+    for num in range(round, (round - 19), - 1):
         if str(num) in results.keys():
             # If the result for this round is already in the saved results, display it.
             print(f'Round: {num} - Result: {results[str(num)]}')
