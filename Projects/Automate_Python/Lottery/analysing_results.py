@@ -46,7 +46,7 @@ results {even_nums}% of them are even, and {odd_nums}% are odd.\n')
 
     # Simulate random games and calculate scores.
     random_games = []
-    for x in range(0, 100_000):  # one million.
+    for x in range(0, 100_000):  
         random_games.append(random.sample(range(1, 26), 15))
   
     score = []
