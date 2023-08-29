@@ -5,7 +5,7 @@ print()
 
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
-def read_image():
+def read_text():
 
     # This function reads and returns text from image.
     image = input('Type in the file\'s name: ')
@@ -13,4 +13,4 @@ def read_image():
     text = pytesseract.image_to_string(file)
     return '\n' + text
 
-print(read_image())
+print(read_text())
