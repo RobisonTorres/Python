@@ -1,26 +1,20 @@
-import json
+import open_save
 import random
 print('Analyzing Previous Results.')
 print()
 
-
-def open_json():
+def organize_data():
      
-     # This function opens the file pre_results.json, and organizes the data to analysis.
-     try:
-        file = open('pre_results.json')
-        lottery_results = json.load(file).values()
-        results = ''.join(lottery_results).replace('-', '') 
-        numbers = [int(results[x: x+2]) for x in range(0, len(results), 2)]
-        return numbers
-     
-     except:
-         return 'File not found.'
+     # This function organizes the data to analysis.
+    lottery_results = open_save.open_file().values()
+    results = ''.join(lottery_results).replace('-', '') 
+    numbers = [int(results[x: x+2]) for x in range(0, len(results), 2)]
+    return numbers
 
 def even_odd():
 
     # This function returns the percentage of even and odd numbers.
-    numbers = open_json()
+    numbers = organize_data()
     count_even = len([n for n in numbers if n % 2 == 0])
     even_nums = float(f'{(count_even/ len(numbers)*100):.2f}')
     return f'From all numbers drew in previous results '\
@@ -30,7 +24,7 @@ def frequency():
     
     # This function gets the frequency of each number 
     # and shows the five numbers most and least drawn.    
-    result_numbers = open_json()
+    result_numbers = organize_data()
     fre_nums = {}
     for num in range(1, 26):
         fre_nums[num] = result_numbers.count(num)
@@ -38,6 +32,7 @@ def frequency():
     # Numbers most an least drawn.
     fre_num_sorted = sorted(fre_nums.items(),key=lambda x:x[1])[::-1]
     numbers = list(dict(fre_num_sorted).keys())
+    
     return f'The frequency of each number in {int(len(result_numbers)/15)} '\
            f'previous result is: \n{fre_nums}.\n\n'\
            f'Most drawn - {sorted(numbers[0:5])}. '\
