@@ -38,7 +38,8 @@ def frequency():
     # Numbers most an least drawn.
     fre_num_sorted = sorted(fre_nums.items(),key=lambda x:x[1])[::-1]
     numbers = list(dict(fre_num_sorted).keys())
-    return f'The frequency of each number in previous result is: \n{fre_nums}.\n\n'\
+    return f'The frequency of each number in {int(len(result_numbers)/15)} '\
+           f'previous result is: \n{fre_nums}.\n\n'\
            f'Most drawn - {sorted(numbers[0:5])}. '\
            f'Least drawn - {sorted(numbers[20:])}.'     
     
