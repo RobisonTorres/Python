@@ -8,7 +8,7 @@ pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tessera
 
 def read_nums():
 
-    # This function reads and return numbers from image.
+    # This function reads and return only numbers from image.
     file = input('Type in the file\'s name: ')
     image = Image.open(file)
 
