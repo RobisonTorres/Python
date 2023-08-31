@@ -12,7 +12,7 @@ def open_file():
 
 def save_file(x):
     
-    # Save the updated results.
+    # This function saves the updated results.
     with open('pre_results.json', 'w') as file:
         json.dump(x, file, indent = 1)
 

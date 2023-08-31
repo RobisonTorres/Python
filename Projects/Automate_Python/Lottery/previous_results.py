@@ -7,9 +7,8 @@ def score():
 
     # This function retrieves twenty previous results from the lottery, 
     # through web scraping or local file, and saves new results for future use.
-
     previous_results = open_save.open_file()
-    round = int(input('Type in the last lottery round: '))
+    round = int(input('Type in the lottery round: '))
     
     for num in range((round - 19), round + 1):
         if str(num) in previous_results.keys():
