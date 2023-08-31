@@ -1,5 +1,5 @@
 import web_scraper
-print('Checking numbers.')
+print('Checking Score.')
 print()
 
 def score(your_games):
