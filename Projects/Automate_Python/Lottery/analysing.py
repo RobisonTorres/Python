@@ -72,7 +72,7 @@ def repetition():
  
 def simulate_games():
 
-    # This function simulates 100,000 games and calculate scores.
+    # This function simulates 100,000 games and calculate scores. Each game is a selection of 15 numbers between 1 and 25.
     random_games = []
     for x in range(0, 100_000):  
         random_games.append(random.sample(range(1, 26), 15))
