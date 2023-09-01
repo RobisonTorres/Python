@@ -1,6 +1,6 @@
 import open_save
 import random
-print('Analyzing Previous Results.')
+print('Simulating.')
 print()
 
 def organize_data():
@@ -22,7 +22,7 @@ def check_duplicate():
     if count:
         return(f'Please check the data, these rounds {"-".join(repeat_keys)} '\
                f'have duplicated results.\n')
-    return 'Each lottery\'s result is unique.\n'
+    return 'Each lottery\'s result is unique in this dataset.\n'
 
 def even_odd():
 
@@ -87,16 +87,18 @@ def simulate_games():
     for num in range(11, 16):
         score_prizes[str(num) + ' pts'] = score.count(num)
     
-    return (f"\nAfter simulating 100,000 random games, "
-        f"the frequency of each score required to win prizes is:\n"
+    return (f"By simulating 100,000 random games, "
+        f"the occurrence of each score required to win prizes is:\n"
         f"{score_prizes}.\n")
 
 def main():
     
+    # This function brings all the analyse.
+    print(simulate_games())
+    print("Analyzing Previous Results.\n")
     print(check_duplicate())
     print(even_odd())
     print(frequency())
     print(repetition())
-    print(simulate_games())
 
 main()
