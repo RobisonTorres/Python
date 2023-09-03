@@ -1,7 +1,31 @@
 import open_save
 import random
-print('Simulating.')
+print('Simulating Games.')
 print()
+
+def simulate_games():
+
+    # This function simulates 100,000 games and calculate scores. 
+    # Each game is a selection of 15 numbers between 1 and 25.
+    random_games = []
+    for x in range(0, 100_000):  
+        random_games.append(random.sample(range(1, 26), 15))
+  
+    score = []
+    random_result = random.sample(range(1, 26), 15)
+    for num in range(0, len(random_games)):
+            score.append(15 - len(set(random_result) - set(random_games[num])))
+
+    # Frequency of winning prizes.    
+    score_prizes = {}
+    for num in range(11, 16):
+        score_prizes[str(num) + ' pts'] = score.count(num)
+    
+    chance_winning = int((sum(list(score_prizes.values())) / 100_000) * 100)
+    return (f"By simulating 100,000 games, "
+        f"the occurrence of each score required to win prizes is:\n"
+        f"{score_prizes}.\n\nIt indicates that the player has approximately "
+        f"{chance_winning}% of chance\nto win at least the lowest prize.\n")
 
 def organize_data():
      
@@ -35,8 +59,8 @@ def even_odd():
 
 def frequency():
     
-    # This function gets the frequency of each number and shows the five 
-    # numbers most and least drawn.    
+    # This function gets the frequency of each number and shows 
+    # the five numbers most and least drawn.    
     result_numbers = organize_data()
     fre_nums = {}
     for num in range(1, 26):
@@ -44,8 +68,7 @@ def frequency():
     
     # Numbers most an least drawn.
     fre_num_sorted = sorted(fre_nums.items(),key=lambda x:x[1])[::-1]
-    numbers = list(dict(fre_num_sorted).keys())
-    
+    numbers = list(dict(fre_num_sorted).keys())    
     return f'Numbers most drawn - {sorted(numbers[0:5])}. '\
            f'Numbers least drawn - {sorted(numbers[20:])}.'     
 
@@ -64,32 +87,10 @@ def repetition():
         fre_result[num] = rep_numbers.count(num)
 
     # Games that repeated at least 9 numbers from previous result.
-    repeated = sum(list(fre_result.values())[3:]) 
-    
+    repeated = sum(list(fre_result.values())[3:])   
     return f'\nThe analysis shows that out of {len(grouped_results) - 1} games analyzed, '\
            f'{((repeated / (len(grouped_results) - 1)) * 100):.2f}% '\
-           f'of them repeated at least 9 numbers from the previous result.'          
- 
-def simulate_games():
-
-    # This function simulates 100,000 games and calculate scores. Each game is a selection of 15 numbers between 1 and 25.
-    random_games = []
-    for x in range(0, 100_000):  
-        random_games.append(random.sample(range(1, 26), 15))
-  
-    score = []
-    random_result = random.sample(range(1, 26), 15)
-    for num in range(0, len(random_games)):
-            score.append(15 - len(set(random_result) - set(random_games[num])))
-
-    # Frequency of winning prizes.    
-    score_prizes = {}
-    for num in range(11, 16):
-        score_prizes[str(num) + ' pts'] = score.count(num)
-    
-    return (f"By simulating 100,000 random games, "
-        f"the occurrence of each score required to win prizes is:\n"
-        f"{score_prizes}.\n")
+           f'of \nthem repeated at least 9 numbers from the previous result.\n'          
 
 def main():
     
