@@ -21,11 +21,11 @@ def simulate_games():
     for num in range(11, 16):
         score_prizes[str(num) + ' pts'] = score.count(num)
     
-    chance_winning = int((sum(list(score_prizes.values())) / 100_000) * 100)
+    chance_winning = int((list(score_prizes.values())[0] / 100_000) * 100)
     return (f"By simulating 100,000 games, "
         f"the occurrence of each score required to win prizes is:\n"
-        f"{score_prizes}.\n\nIt indicates that the player has approximately "
-        f"{chance_winning}% of chance\nto win at least the lowest prize.\n")
+        f"{score_prizes}. It indicates\nthat the player has approximately "
+        f"{chance_winning}% of chance to win at least the lowest prize per game.\n")
 
 def organize_data():
      
@@ -46,7 +46,7 @@ def check_duplicate():
     if count:
         return(f'Please check the data, these rounds {"-".join(repeat_keys)} '\
                f'have duplicated results.\n')
-    return 'Each lottery\'s result is unique in this dataset.\n'
+    return 'Each lottery\'s result is unique in this dataset.'
 
 def even_odd():
 
@@ -54,8 +54,8 @@ def even_odd():
     numbers = organize_data()
     count_even = len([n for n in numbers if n % 2 == 0])
     even_nums = float(f'{(count_even/ len(numbers)*100):.2f}')
-    return f'From all numbers drawn in {int(len(numbers)/ 15)} previous games, '\
-           f'{even_nums}% of them are even and {100 - even_nums}% are odd.\n'
+    return f'In {int(len(numbers)/ 15)} previous results '\
+           f'{even_nums}% of the numbers are even and {100 - even_nums}% are odd.'
 
 def frequency():
     
@@ -88,9 +88,9 @@ def repetition():
 
     # Games that repeated at least 9 numbers from previous result.
     repeated = sum(list(fre_result.values())[3:])   
-    return f'\nThe analysis shows that out of {len(grouped_results) - 1} games analyzed, '\
+    return f'And out of {len(grouped_results) - 1} games analyzed, '\
            f'{((repeated / (len(grouped_results) - 1)) * 100):.2f}% '\
-           f'of \nthem repeated at least 9 numbers from the previous result.\n'          
+           f'of them repeated at least 9 numbers from the previous result.\n'          
 
 def main():
     
