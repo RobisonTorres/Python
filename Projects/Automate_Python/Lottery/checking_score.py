@@ -16,6 +16,7 @@ def score(your_games):
     return '\n'.join(result)
 
 if __name__ == "__main__":
+    
     print('Checking Score.')
     print()
     print(score([[1,4,5,6,8,10,11,13,15,16,17,18,20,22,25],

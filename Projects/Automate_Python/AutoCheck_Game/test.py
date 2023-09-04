@@ -1,17 +1,24 @@
 import sys
-sys.path.append(r'your_path\Image_Reader')
+sys.path.append(r'C:\Users\rcssi\Code\Python\Python\Projects\Automate_Python\Image_Reader')
 from reader_num import read_nums
-sys.path.append(r'your_path\Lottery')
+sys.path.append(r'C:\Users\rcssi\Code\Python\Python\Projects\Automate_Python\Lottery')
 from checking_score import score
 
-#print(score())
 
-def get_number():
+def get_numbers():
     
-    a = read_nums('game1.png')
-    numbers_image = [n for n in a]
-    numbers = []
-    while len(numbers) <= 15:
-              
+    numbers_image = read_nums('game1.png')
+    nums = [n for n in numbers_image]
+    numbers = [0]
+    while nums:
+        if int(nums[0]) > max(numbers):
+            numbers.append(int(nums[0]))
+            nums = nums[1:]
+        else:
+            numbers.append(int(''.join(nums[0:2])))            
+            nums = nums[2:]
+    return [numbers[1:]]
 
-print(get_number())
+#game = get_numbers()
+#print(game)
+score()
