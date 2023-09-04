@@ -1,6 +1,4 @@
 import web_scraper
-print('Checking Score.')
-print()
 
 def score(your_games):
     
@@ -17,7 +15,10 @@ def score(your_games):
                                +  str(15 - len(set(lottery_result) - set(game))))
     return '\n'.join(result)
 
-print(score([[1,4,5,6,8,10,11,13,15,16,17,18,20,22,25],
+if __name__ == "__main__":
+    print('Checking Score.')
+    print()
+    print(score([[1,4,5,6,8,10,11,13,15,16,17,18,20,22,25],
             [1,3,5,6,8,10,11,12,14,16,17,20,21,23,25],
             [1,3,5,6,8,9,10,11,13,15,16,18,20,21,24],
             [1,3,5,6,8,10,11,13,15,16,18,20,21,22,24],
