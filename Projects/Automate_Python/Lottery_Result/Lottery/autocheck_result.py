@@ -1,6 +1,6 @@
 import checking_score
 import sys
-sys.path.append(r'C:\Users\rcssi\Code\Python\Python\Projects\Automate_Python\Image_Reader')
+sys.path.append(r'Your_Path\Automate_Python\Image_Reader')
 from reader_numbers import read_nums
 
 def get_numbers():
