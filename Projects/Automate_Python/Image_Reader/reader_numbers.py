@@ -12,7 +12,7 @@ def read_nums(image=False):
         image = Image.open(file)
 
     #Remove all non-number characters.
-    custom_config = r'--oem 3 --psm 6 -c tessedit_char_whitelist=0123456789'
+    custom_config = r'--oem 3 --psm 6 -c tessedit_char_whitelist=0123456789#'
     numbers_string = pytesseract.image_to_string(image, config=custom_config)
     numbers_int = re.sub(r'[a-z\n\s]', '', numbers_string.lower())
     
