@@ -1,8 +1,6 @@
 import re
 import pytesseract
 from PIL import Image
-print('Reading Images.')
-print()
 
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
@@ -21,5 +19,7 @@ def read_nums(image=False):
     return numbers_int
 
 if __name__ == "__main__":
-   
+
+    print('Reading Images.')
+    print()  
     print(read_nums())
