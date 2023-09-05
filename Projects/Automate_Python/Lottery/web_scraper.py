@@ -23,23 +23,24 @@ def extract_search(round=False):
     if str(round) in previous_results.keys():
         return [round, previous_results[str(round)]]
     
-    try:
-        target = web_search(round)
-        numbers = target.find('div', class_='resultado-individual-sorteio')
+    target = web_search(round)
+    round_found = target.find('h1', class_='col-md-6 col-sm-6 col-xs-12')
+    numbers = target.find('div', class_='resultado-individual-sorteio')
 
-        # Only numbers.
-        nums = re.sub(r'[\n\s]', '', numbers.text)
-        lottery_result = '-'.join([nums[x:x+2] for x in range(0, len(nums), 2)])
+    # Only numbers.
+    nums = re.sub('[^0-9]', '', numbers.text)
+    round_found = re.sub('[^0-9]', '', round_found.text)
+      
+    if round != round_found:
+        return f'Sorry, there is no result for round {round} yet.\n'
+    lottery_result = '-'.join([nums[x:x+2] for x in range(0, len(nums), 2)])
 
-        # Save.
-        previous_results[round] = lottery_result
-        previous_results = dict(sorted(previous_results.items(),key=lambda x:int(x[0])))
-        open_save.save_file(previous_results)   
-        return [round, lottery_result]
-
-    except:
-        return 'Something went wrong, please try again.'
-
+    # Save.
+    previous_results[round] = lottery_result
+    previous_results = dict(sorted(previous_results.items(),key=lambda x:int(x[0])))
+    open_save.save_file(previous_results)   
+    return [round, lottery_result]
+    
 '''
 Old version.
 
