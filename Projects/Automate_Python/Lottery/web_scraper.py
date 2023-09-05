@@ -19,7 +19,10 @@ def extract_search(round=False):
     
     if not round:
         round = input('What round do you want to check: ')
-
+        
+    if str(round) in previous_results.keys():
+        return [round, previous_results[str(round)]]
+    
     try:
         target = web_search(round)
         numbers = target.find('div', class_='resultado-individual-sorteio')
@@ -32,7 +35,7 @@ def extract_search(round=False):
         previous_results[round] = lottery_result
         previous_results = dict(sorted(previous_results.items(),key=lambda x:int(x[0])))
         open_save.save_file(previous_results)   
-        return [round ,lottery_result]
+        return [round, lottery_result]
 
     except:
         return 'Something went wrong, please try again.'

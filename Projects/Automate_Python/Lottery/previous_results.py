@@ -11,6 +11,8 @@ def score():
     round = int(input('Type in the lottery round: '))
     
     for num in range((round - 19), round + 1):
+        if num <=0: continue
+            
         if str(num) in previous_results.keys():
             # If the result for this round is already in the saved results, display it.
             print(f'Round: {num} - Result: {previous_results[str(num)]}')
