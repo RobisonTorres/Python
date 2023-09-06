@@ -20,7 +20,12 @@ def score():
         else:
             # If the result is not saved, retrieve it through web scraping.
             lottery_result = web_scraper.extract_search(num)
-            print(f'Round: {num} - Result: {lottery_result[1]}') 
+            
+            if len(lottery_result) == 1:
+                print(f'Round: {num} - Result not found.')
+                
+            else:    
+                print(f'Round: {num} - Result: {lottery_result[1]}') 
 
     return '\nNews results have been saved.'
 

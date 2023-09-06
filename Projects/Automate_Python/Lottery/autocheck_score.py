@@ -26,7 +26,11 @@ def get_numbers():
         your_games.append(numbers[1:])
         print(f'{x + 1}° Game: {"-".join([str(n).zfill(2) for n in numbers[1:]])}')
     print()
-    result = checking_score.score(your_games)
-    return result
+
+    lottery_result = checking_score.score(your_games)
+    if len(lottery_result) == 1:
+        return f'Round: {lottery_result[0]} - Result not found.'
+
+    return lottery_result
 
 print(get_numbers())
