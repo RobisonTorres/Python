@@ -8,7 +8,7 @@ def get_numbers():
     # This function retrieves numbers from image and processes them to form
     # lottery games. Then it gives the total score hit with each game.
     your_games = []   
-    numbers_retrieve = read_nums(f'games1.png')
+    numbers_retrieve = read_nums(f'games.png')
     games_retrieve =  numbers_retrieve.replace('#', ' ').split()
     
     for x in range(0, len(games_retrieve)):
