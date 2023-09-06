@@ -1,31 +1,5 @@
 import open_save
 import random
-print('Simulating Games.')
-print()
-
-def simulate_games():
-
-    # This function simulates 100,000 games and calculate scores. 
-    # Each game is a selection of 15 numbers between 1 and 25.
-    random_games = []
-    for x in range(0, 100_000):  
-        random_games.append(random.sample(range(1, 26), 15))
-  
-    score = []
-    random_result = random.sample(range(1, 26), 15)
-    for num in range(0, len(random_games)):
-            score.append(15 - len(set(random_result) - set(random_games[num])))
-
-    # Frequency of winning prizes.    
-    score_prizes = {}
-    for num in range(11, 16):
-        score_prizes[str(num) + ' pts'] = score.count(num)
-    
-    chance_winning = int((list(score_prizes.values())[0] / 100_000) * 100)
-    return (f"By simulating 100,000 games, "
-        f"the occurrence of each score required to win prizes is:\n"
-        f"{score_prizes}. It indicates\nthat the player has approximately "
-        f"{chance_winning}% of chance to win at least the lowest prize per game.\n")
 
 def organize_data():
      
@@ -92,14 +66,38 @@ def repetition():
            f'{((repeated / (len(grouped_results) - 1)) * 100):.2f}% '\
            f'of them repeated at least 9 numbers from the previous result.\n'          
 
-def main():
+def simulate_games():
+
+    # This function simulates 100,000 games and calculate scores. 
+    # Each game is a selection of 15 numbers between 1 and 25.
+    random_games = []
+    for x in range(0, 100_000):  
+        random_games.append(random.sample(range(1, 26), 15))
+  
+    score = []
+    random_result = random.sample(range(1, 26), 15)
+    for num in range(0, len(random_games)):
+            score.append(15 - len(set(random_result) - set(random_games[num])))
+
+    # Frequency of winning prizes.    
+    score_prizes = {}
+    for num in range(11, 16):
+        score_prizes[str(num) + ' pts'] = score.count(num)
     
-    # This function brings all the analyse.
-    print(simulate_games())
+    chance_winning = int((list(score_prizes.values())[0] / 100_000) * 100)
+    return (f"By simulating 100,000 games, "
+        f"the occurrence of each score required to win prizes is:\n"
+        f"{score_prizes}. It indicates\nthat the player has approximately "
+        f"{chance_winning}% of chance to win at least the lowest prize per game.\n")
+
+def main():
+   
     print("Analyzing Previous Results.\n")
     print(check_duplicate())
     print(even_odd())
     print(frequency())
     print(repetition())
+    print('Simulating Games.')
+    print(simulate_games())
 
 main()

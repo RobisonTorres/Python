@@ -1,32 +1,24 @@
-import open_save
 import web_scraper
 print('Gathering Previous Results.')
 print()
 
-def score():
+def gathering_data():
 
     # This function retrieves twenty previous results from the lottery, 
     # through web scraping or local file, and saves new results for future use.
-    previous_results = open_save.open_file()
     round = int(input('Type in the lottery round: '))
-    
     for num in range((round - 19), round + 1):
         if num <=0: continue
             
-        if str(num) in previous_results.keys():
-            # If the result for this round is already in the saved results, display it.
-            print(f'Round: {num} - Result: {previous_results[str(num)]}')
-
         else:
-            # If the result is not saved, retrieve it through web scraping.
-            lottery_result = web_scraper.extract_search(num)
-            
-            if len(lottery_result) == 1:
-                print(f'Round: {num} - Result not found.')
+            lottery_result = web_scraper.extract_search(num)                       
+            if type(lottery_result) == str:
+                print(f'{lottery_result}')
                 
-            else:    
-                print(f'Round: {num} - Result: {lottery_result[1]}') 
+            else: 
+                numbers_result = lottery_result[1]
+                print(f'Round: {num} - Result: {numbers_result}') 
 
     return '\nNews results have been saved.'
 
-print(score())
+print(gathering_data())
