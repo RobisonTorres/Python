@@ -114,7 +114,7 @@ def main():
     print(frequency())
     print(frequency_range())
     print(repetition())
-    print('Simulating Games.')
+    print('Simulating Games.\n')
     print(simulate_games())
 
 main()
