@@ -46,6 +46,22 @@ def frequency():
     return f'Numbers most drawn - {sorted(numbers[0:5])}. '\
            f'Numbers least drawn - {sorted(numbers[20:])}.'     
 
+def frequency_range():
+    
+    # This function groups the numbers in 5 different
+    # ranges and shows the most and least drawn
+    result_numbers = organize_data()
+    fre_ranges = {}
+    for x in range(1, 26, 5):
+        count_numbers = str(len([n for n in result_numbers if n in range(x, x + 5)]))
+        fre_ranges[f'{x}-{x + 4}'] = count_numbers
+    
+    # Ranges most an least drawn.
+    fre_ranges_sorted = sorted(fre_ranges.items(),key=lambda x:int(x[1]))[::-1]
+    ranges = list(dict(fre_ranges_sorted).keys())
+    return f'Range most drawn - {[ranges[0]]}. '\
+           f'Range least drawn - {[ranges[-1]]}.'
+
 def repetition():
 
     # This function calculates the frequency of repeated numbers 
@@ -96,6 +112,7 @@ def main():
     print(check_duplicate())
     print(even_odd())
     print(frequency())
+    print(frequency_range())
     print(repetition())
     print('Simulating Games.')
     print(simulate_games())
