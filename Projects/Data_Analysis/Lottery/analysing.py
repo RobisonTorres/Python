@@ -20,7 +20,7 @@ def check_duplicate():
     if count:
         return(f'Please check the data, these rounds {"-".join(repeat_keys)} '\
                f'have duplicated results.\n')
-    return 'Each lottery\'s result is unique in this dataset.'
+    return 'Each lottery\'s result is unique in this dataset.\n'
 
 def even_odd():
 
@@ -49,7 +49,7 @@ def frequency():
 def frequency_range():
     
     # This function groups the numbers in 5 different
-    # ranges and shows the most and least drawn
+    # ranges and shows the most and least drawn.
     result_numbers = organize_data()
     fre_ranges = {}
     for x in range(1, 26, 5):
@@ -61,6 +61,23 @@ def frequency_range():
     ranges = list(dict(fre_ranges_sorted).keys())
     return f'Range most drawn - {[ranges[0]]}. '\
            f'Range least drawn - {[ranges[-1]]}.'
+
+def get_sequence():
+
+    # This function returns the games with more and less numbers in sequence.
+    numbers = organize_data()
+    g_results = [sorted(numbers[x:x+15]) for x in range(0, len(numbers), 15)]
+    sequence = []
+    for x in range(0, len(g_results)):
+        seq = [0]
+        [seq.append(seq[-1]+1) if g_results[x][y] + 1 == g_results[x][y+1]
+                               else seq.append(0) for y in range(0, 14)]
+        sequence.append(max(seq))
+    
+    more_seq = g_results[sequence.index(max(sequence))]
+    less_seq = g_results[sequence.index(min(sequence))]
+    return f'Game with more numbers in sequence: {"-".join(map(str , more_seq))}'\
+           f'\nGame with less numbers in sequence: {"-".join(map(str, less_seq))}\n'
 
 def repetition():
 
@@ -80,7 +97,7 @@ def repetition():
     repeated = sum(list(fre_result.values())[3:])   
     return f'And out of {len(grouped_results) - 1} games analyzed, '\
            f'{((repeated / (len(grouped_results) - 1)) * 100):.2f}% '\
-           f'of them repeated at least 9 numbers from the previous result.\n'          
+           f'of them repeated at least 9 numbers from the previous result.\n'             
 
 def simulate_games():
 
@@ -113,6 +130,7 @@ def main():
     print(even_odd())
     print(frequency())
     print(frequency_range())
+    print(get_sequence())
     print(repetition())
     print('Simulating Games.\n')
     print(simulate_games())
