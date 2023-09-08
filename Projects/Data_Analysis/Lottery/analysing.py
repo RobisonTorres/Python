@@ -59,8 +59,8 @@ def frequency_range():
     # Ranges most an least drawn.
     fre_ranges_sorted = sorted(fre_ranges.items(),key=lambda x:int(x[1]))[::-1]
     ranges = list(dict(fre_ranges_sorted).keys())
-    return f'Range most drawn - {[ranges[0]]}. '\
-           f'Range least drawn - {[ranges[-1]]}.'
+    return f'Range of numbers most drawn - {[ranges[0]]}. '\
+           f'Range of numbers least drawn - {[ranges[-1]]}.'
 
 def get_sequence():
 
@@ -95,7 +95,7 @@ def repetition():
 
     # Games that repeated at least 9 numbers from previous result.
     repeated = sum(list(fre_result.values())[3:])   
-    return f'And out of {len(grouped_results) - 1} games analyzed, '\
+    return f'Out of {len(grouped_results) - 1} games analyzed, '\
            f'{((repeated / (len(grouped_results) - 1)) * 100):.2f}% '\
            f'of them repeated at least 9 numbers from the previous result.\n'             
 
