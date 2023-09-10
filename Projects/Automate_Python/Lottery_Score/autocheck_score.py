@@ -6,9 +6,9 @@ def get_numbers():
 
     # This function retrieves numbers from image and processes them to form lottery games. 
     your_games = []   
-    numbers_retrieved = reader_numbers.read_nums(f'games3.png')
-    round_retrieved = re.sub(r'(#\d+)|(\@)', '', numbers_retrieved)
+    numbers_retrieved = reader_numbers.read_nums(f'games.png')
     games_retrieved =  re.sub(r'(#\d)|(\@\d+)', ' ', numbers_retrieved).split()
+    round_retrieved = re.sub(r'(#\d+)|(\@)', '', numbers_retrieved)
    
     for x in range(0, len(games_retrieved)):
         nums = [int(n) for n in games_retrieved[x]]   
@@ -27,10 +27,8 @@ def auto_check():
     image_result = get_numbers()
     your_games = image_result[0]
     round = image_result[1]
-
     for n, game in enumerate(your_games, 1):
         print(f'{str(n)}° Game - {("-".join(map(str, game)))}')
-    print()   
 
     lottery_result = checking_score.score(your_games, round)
     return lottery_result
