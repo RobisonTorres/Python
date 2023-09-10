@@ -1,4 +1,4 @@
-import web_scraper
+import web_scraper, autocheck_score
 
 def score(your_games, round=False):
     
@@ -8,8 +8,8 @@ def score(your_games, round=False):
         return lottery_result
 
     else:
-        round = lottery_result[0]
-        numbers_result = lottery_result[1]            
+        numbers_result = lottery_result[0]            
+        round = lottery_result[1]
         print(f'\nRound: {round} - Result: {("-".join(map(str, numbers_result)))}\n')
 
         # Comparing the lottery's result with your games.
@@ -29,3 +29,8 @@ if __name__ == "__main__":
         [],
         [],
         []]))
+    
+    compare = input('\nType \'y\' to compare this result with auto check: ')
+    if compare == 'y': 
+        
+        print(autocheck_score.auto_check())

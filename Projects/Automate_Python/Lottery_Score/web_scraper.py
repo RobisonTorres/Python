@@ -27,4 +27,4 @@ def extract_search(round=False):
 
     else:
         lottery_result = [int(lottery_numbers[x:x+2]) for x in range(0, len(lottery_numbers), 2)]
-        return [round, lottery_result]
+        return [lottery_result, round]

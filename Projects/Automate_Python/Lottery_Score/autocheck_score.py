@@ -21,16 +21,28 @@ def get_numbers():
 
     return [your_games, round_retrieved]
 
+def show_games():
+
+    # This function shows the games retrieved from the image.
+    image_result = get_numbers()
+    your_games = image_result[0]
+    show = []
+
+    for n, game in enumerate(your_games, 1):
+        show.append(f'{str(n)}° Game - {("-".join(map(str, game)))}')
+
+    return '\n'.join(show)
+
 def auto_check():
 
     # This function checks the total score hit in each game.
     image_result = get_numbers()
     your_games = image_result[0]
     round = image_result[1]
-    for n, game in enumerate(your_games, 1):
-        print(f'{str(n)}° Game - {("-".join(map(str, game)))}')
-
+    
     lottery_result = checking_score.score(your_games, round)
     return lottery_result
 
-print(auto_check())
+if __name__ == "__main__":
+    print(show_games())
+    print(auto_check())
