@@ -1,4 +1,4 @@
-import sys, re, checking_score
+import sys, re
 sys.path.append(r'C:\Users\rcssi\Code\Python\Python\Projects\Automate_Python\Image_Reader')
 import reader_numbers
 
@@ -33,16 +33,6 @@ def show_games():
 
     return '\n'.join(show)
 
-def auto_check():
-
-    # This function checks the total score hit in each game.
-    image_result = get_numbers()
-    your_games = image_result[0]
-    round = image_result[1]
-    
-    lottery_result = checking_score.score(your_games, round)
-    return lottery_result
-
 if __name__ == "__main__":
+    
     print(show_games())
-    print(auto_check())

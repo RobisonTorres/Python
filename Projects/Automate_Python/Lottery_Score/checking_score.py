@@ -1,4 +1,6 @@
-import web_scraper, autocheck_score
+import web_scraper, games_image
+print('Checking Score.')
+print()
 
 def score(your_games, round=False):
     
@@ -19,18 +21,16 @@ def score(your_games, round=False):
                                    +  str(15 - len(set(numbers_result) - set(game))))
         return '\n'.join(score_result)
 
-if __name__ == "__main__":
-   
-    print('Checking Score.')
-    print()
-    print(score([[1,3,5,6,7,9,11,12,15,16,18,20,21,22,24],
-        [1,3,6,8,10,11,12,13,15,17,19,20,21,23,24],
-        [1,3,5,6,8,10,11,12,14,16,18,20,21,23,25],
-        [],
-        [],
-        []]))
-    
-    compare = input('\nType \'y\' to compare this result with auto check: ')
-    if compare == 'y': 
-        
-        print(autocheck_score.auto_check())
+print(score([[1,3,5,6,7,9,11,12,15,16,18,20,21,22,24],
+           [1,3,6,8,10,11,12,13,15,17,19,20,21,23,24],
+           [1,3,5,6,8,10,11,12,14,16,18,20,21,23,25],
+           [],
+           [],
+           []]))
+
+def auto_checking():
+
+    # This function checks the score automatically.
+    return score(*games_image.get_numbers())
+
+#print(score(*games_image.get_numbers()))
