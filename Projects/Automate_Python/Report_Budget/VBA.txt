@@ -1,6 +1,6 @@
 First Module
 
-Record the macro and apply "zoom selection" on Dash.
+Record the macro and apply "zoom selection" on Dash (='Gráfico - Anual'!$A$1:$P$26)
 
 Sub AdjustZoom()
     On Error GoTo Sair
