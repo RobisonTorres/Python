@@ -1,9 +1,0 @@
-{
-    "cSpell.words": [
-        "googlesearch"
-    ],
-    "python.analysis.extraPaths": [
-        "./Projects/Automate_Python/Image_Reader",
-        "./Projects/Automate_Python/Image_Reader"
-    ]
-}
