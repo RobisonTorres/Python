@@ -8,7 +8,7 @@ with warnings.catch_warnings():
 def get_balance():
 
     # This function extract data from Personal_Budget.xlsx.
-    annual_balance = wb['E4'].value
-    current_balance = wb['E5'].value
+    current_balance = wb['C3'].value
+    annual_balance = wb['C12'].value
     return f'The current balance is $ {current_balance}.'\
            f'The annual balance is $ {annual_balance}.' 
