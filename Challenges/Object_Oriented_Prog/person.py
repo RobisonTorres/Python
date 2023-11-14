@@ -2,7 +2,6 @@ print('Object Oriented Programming.')
 print()
 
 class Person:
-
     '''
     Your task is to complete this Class, the Person class has been created. 
     You must fill in the Constructor method to accept a name as string and 
