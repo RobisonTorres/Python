@@ -20,9 +20,6 @@ def productFib(prod):
     while fn_number < prod:
         fn_number = fibonacci(n) * fibonacci(n+1)
         n += 1
-    if fn_number == prod:
-        return [fibonacci(n-1), fibonacci(n), True]
-    else:
-        return [fibonacci(n-1), fibonacci(n), False]
+    return [fibonacci(n-1), fibonacci(n), fn_number == prod]
 
 print(productFib(714))  # Outputs - [21, 34, True]
