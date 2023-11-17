@@ -9,7 +9,6 @@ class Human():
     class Woman. Both objects have to be subclasses of Human. Your job is to implement
     the Human, Man and Woman classes.
     '''
-
     def __init__(self, name, sex, age):
         self.name = name
         self.sex = sex
