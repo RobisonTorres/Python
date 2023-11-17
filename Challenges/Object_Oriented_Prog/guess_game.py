@@ -5,6 +5,7 @@ class Guesser:
     """"
     Imagine you are creating a game where the user has to guess the correct number.
     But there is a limit of how many guesses the user can do.
+    (...)
     """
     def __init__(self, number, lives):
         self.number = number
