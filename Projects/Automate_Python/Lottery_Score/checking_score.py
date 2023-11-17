@@ -21,9 +21,9 @@ def score(your_games, round=False):
                                    +  str(15 - len(set(numbers_result) - set(game))))
         return '\n'.join(score_result)
 
-print(score([[1,3,5,6,7,9,11,12,15,16,18,20,21,22,24],
-           [1,3,6,8,10,11,12,13,15,17,19,20,21,23,24],
-           [1,3,5,6,8,10,11,12,14,16,18,20,21,23,25],
+print(score([[],
+           [],
+           [],
            [],
            [],
            []]))
