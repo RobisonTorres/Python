@@ -12,16 +12,14 @@ def score(dice):
     for n in list(set(dice)):
         numbers = ''.join([m for m in throws if m == str(n)])
         while numbers:
-            if len(numbers) >= 3:
-                if numbers[:3] in scores:
-                    points += scores[numbers[:3]]
-                    numbers = numbers[3:]
+            if numbers[:3] in scores:
+                points += scores[numbers[:3]]
+                numbers = numbers[3:]
+            elif numbers[:1] in scores:
+                points += scores[numbers[0]]
+                numbers = numbers[1:]
             else:
-                if numbers[:1] in scores:
-                    points += scores[numbers[0]]
-                    numbers = numbers[1:]
-                else:
-                    numbers = numbers[1:]
+                numbers = numbers[1:]
     return points
 
 print(score([5, 1, 3, 4, 1]))
