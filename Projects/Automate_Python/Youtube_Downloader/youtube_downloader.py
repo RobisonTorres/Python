@@ -25,6 +25,7 @@ def download():
             youtube_video = youtube_video.streams.get_highest_resolution()
             try:
                 youtube_video.download(directory)
+                print('Download successfully.')
             except: return 'Sorry, something went wrong.'
 
         elif option == 2:
@@ -43,8 +44,8 @@ def download():
         else:
             return 'Wrong option.'
         print()
-        start = input("Type in 'Yes' if you want to continue or anything else to stop:\n" ).capitalize()
+        start = input("Type in 'y' if you want to continue or anything else to stop:\n" ).lower()
         subprocess.run('cls', shell=True)
-    return 'Download successfully.'
+    return 'Operation is finished.'
 
 print(download())
