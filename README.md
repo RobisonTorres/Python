@@ -6,5 +6,5 @@ This repository stored my personal solutions for various challenges from [codewa
 
  * These challenges cover a range of concept in Python.
  * In general, these challenges are the most popular on the site.
- * The difficulty increases as the numbers of the folder decrease.
+ * The difficulty increases as the number of the folders decrease.
  * Each function has a brief description of its functionality.
